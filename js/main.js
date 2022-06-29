@@ -1,9 +1,10 @@
-const getRandomInt = (arg1, arg2) => {
-  const fromNumber = Math.min(arg1, arg2);
-  const toNumber = Math.max(arg1, arg2);
-  return Math.floor(fromNumber + Math.random() * (toNumber + 1 - fromNumber));
+const getRandomInt = (a, b) => {
+  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
 };
 getRandomInt(1, 3);
 
-const getStringLength = (string, maxlength) => string.length <= maxlength;
-getStringLength('Hello world', 10);
+const checkStringLength = (string, length) => string.length <= length;
+checkStringLength('Hello world', 10);
