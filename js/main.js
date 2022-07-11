@@ -42,4 +42,4 @@ const getSeuence = (count) => {
 };
 
 const SIMILAR_OBJECT = getSeuence(SIMILAR_OBJECT_COUNT);
-console.log(SIMILAR_OBJECT);
+SIMILAR_OBJECT();
