@@ -1,5 +1,6 @@
-import { SIMILAR_OBJECT } from './data';
+import { SIMILAR_OBJECTS } from './data';
 import { checkStringLength } from './utils';
-SIMILAR_OBJECT();
+
+SIMILAR_OBJECTS();
 checkStringLength('Hello world', 10);
 
