@@ -1,4 +1,4 @@
-import { SIMILAR_OBJECTS } from './data';
+import { SIMILAR_OBJECTS } from './data.js';
 
 const container = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');

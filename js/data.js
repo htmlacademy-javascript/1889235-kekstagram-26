@@ -1,4 +1,4 @@
-import { getCreateArray, getRandomArrayElement } from './utils';
+import { getCreateArray, getRandomArrayElement } from './utils.js';
 
 const LIKES = getCreateArray(15, 200);
 const AVATARS = getCreateArray(1, 6);
