@@ -9,7 +9,7 @@ const fragment = document.createDocumentFragment();
 
 miniatures.forEach(({ url, likes, comments }) => {
   const pictureElement = pictureTemplate.cloneNode(true);
-  pictureElement.querySelector('[src]').textContent = url;
+  pictureElement.querySelector('img').setAttribute('src', url);
   pictureElement.querySelector('.picture__likes').textContent = likes;
   pictureElement.querySelector('.picture__comments').textContent = comments;
   fragment.appendChild(pictureElement);

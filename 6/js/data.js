@@ -5,7 +5,6 @@ const AVATARS = getCreateArray(1, 6);
 const DESCRIPTIONS = ['Красивый вид', 'Замечательный день', 'Хорошая погода'];
 const MESSAGES = ['Всё отлично!', 'В целом всё неплохо. Но не всё.',];
 const NAMES = ['Иван', 'Игорь', 'Настя', 'Роман',];
-// const SIMILAR_OBJECT_COUNT = 25;
 
 const createObject = (id, photos) => ({
   id,
