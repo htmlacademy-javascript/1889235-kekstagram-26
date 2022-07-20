@@ -1,4 +1,4 @@
-import { createObject } from './data';
+const checkStringLength = (string, length) => string.length <= length;
 
 const getCreateArray = (start, end) => Array(end - start + 1).fill().map((_, idx) => start + idx);
 
@@ -11,17 +11,5 @@ const getRandomInt = (a, b) => {
 
 const getRandomArrayElement = (elements) => elements[getRandomInt(0, elements.length - 1)];
 
-const checkStringLength = (string, length) => string.length <= length;
-checkStringLength('Hello world', 10);
+export { getCreateArray, getRandomArrayElement, checkStringLength };
 
-const getSeuence = (count) => {
-  const objects = [];
-  for (let i = 1; i <= count; i++) {
-    objects.push(createObject(i, i));
-  }
-  return objects;
-};
-
-export { getSeuence };
-export { getCreateArray };
-export { getRandomArrayElement };

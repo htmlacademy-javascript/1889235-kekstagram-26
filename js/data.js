@@ -1,13 +1,10 @@
-import { getCreateArray } from './util';
-import { getRandomArrayElement } from './util';
-import { getSeuence } from './util';
+import { getCreateArray, getRandomArrayElement } from './utils.js';
 
 const LIKES = getCreateArray(15, 200);
 const AVATARS = getCreateArray(1, 6);
 const DESCRIPTIONS = ['Красивый вид', 'Замечательный день', 'Хорошая погода'];
 const MESSAGES = ['Всё отлично!', 'В целом всё неплохо. Но не всё.',];
 const NAMES = ['Иван', 'Игорь', 'Настя', 'Роман',];
-const SIMILAR_OBJECT_COUNT = 25;
 
 const createObject = (id, photos) => ({
   id,
@@ -24,8 +21,14 @@ const createObject = (id, photos) => ({
   ],
 });
 
-const SIMILAR_OBJECT = () => getSeuence(SIMILAR_OBJECT_COUNT);
-SIMILAR_OBJECT();
+const getSeuence = (count) => {
+  const objects = [];
+  for (let i = 1; i <= count; i++) {
+    objects.push(createObject(i, i));
+  }
+  return objects;
+};
 
-export { createObject };
-export { SIMILAR_OBJECT };
+const SIMILAR_OBJECTS = (count) => getSeuence(count);
+
+export { SIMILAR_OBJECTS };
