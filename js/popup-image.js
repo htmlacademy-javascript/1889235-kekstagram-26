@@ -1,10 +1,11 @@
 // import { SIMILAR_OBJECTS } from './data.js';
-
-const popupPhoto = document.querySelector('.big-picture');
 // const commentsList = popupPhoto.querySelectorAll('.social__comment');
 // const bigPicture = popupPhoto.querySelector('.big-picture__img');
+const containerImages = ;
 
+const popupPhoto = document.querySelector('.big-picture');
 const popupPhotoApparent = () => popupPhoto.classList.remove('hidden');
+
 popupPhoto.addEventListener('click', popupPhotoApparent);
 
 
