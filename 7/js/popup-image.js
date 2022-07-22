@@ -1,12 +1,36 @@
-// import { SIMILAR_OBJECTS } from './data.js';
+import './rendering-photo.js';
+import { isEscapeKey } from './utils.js';
 
 const popupPhoto = document.querySelector('.big-picture');
-// const commentsList = popupPhoto.querySelectorAll('.social__comment');
-// const bigPicture = popupPhoto.querySelector('.big-picture__img');
+const popupPhotoOpen = document.querySelector('kartinki');
+const popupPhotoClose = popupPhoto.querySelector('#picture-cancel');
 
-const popupPhotoApparent = () => popupPhoto.classList.remove('hidden');
-popupPhoto.addEventListener('click', popupPhotoApparent);
+const onPopupEsckeydown = (evt) => {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    popupClose();
+  }
+};
 
+function popupOpen() {
+  popupPhoto.classList.remove('hidden');
+
+  document.addEventListener('keydown', onPopupEsckeydown);
+
+  popupPhoto.querySelector('.social__comment-count').classList.remove('hidden');
+  popupPhoto.querySelector('.comments-loader').classList.remove('hidden');
+  document.querySelector('body').classList.add('modal-open');
+}
+
+function popupClose() {
+  popupPhoto.classList.add('hidden');
+
+  document.removeEventListener('keydown', onPopupEsckeydown);
+}
+
+popupPhotoOpen.addEventListener('click', popupOpen);
+
+popupPhotoClose.addEventListener('click', popupClose);
 
 // const popupPhotos = SIMILAR_OBJECTS(25);
 
@@ -19,10 +43,4 @@ popupPhoto.addEventListener('click', popupPhotoApparent);
 //   commentsList.querySelectorAll('img').setAttribute('alt', name);
 //   commentsList.querySelectorAll('p').textContent = message;
 // });
-
-// popupPhoto.querySelector('.social__comment-count').classList.remove('hidden');
-// popupPhoto.querySelector('.comments-loader').classList.remove('hidden');
-// document.querySelector('body').classList.add('modal-open');
-
-// export { popupPhotos };
 
