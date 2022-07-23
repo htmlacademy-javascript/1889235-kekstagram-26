@@ -1,7 +1,7 @@
 import { SIMILAR_OBJECTS } from './data.js';
 
 export const renderingPhoto = () => {
-  const container = document.querySelector('.pictures');
+  const pictureContainer = document.querySelector('.pictures');
   const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
   const miniatures = SIMILAR_OBJECTS(25);
@@ -15,5 +15,5 @@ export const renderingPhoto = () => {
     pictureElement.querySelector('.picture__comments').textContent = comments;
     fragment.appendChild(pictureElement);
   });
-  container.appendChild(fragment);
+  pictureContainer.appendChild(fragment);
 };
