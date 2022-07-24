@@ -33,7 +33,7 @@
         <div class="img-upload__wrapper">
           <h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
           <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data"
-            autocomplete="off">
+            autocomplete="off" action="https://26.javascript.pages.academy/kekstagram">
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
@@ -129,7 +129,8 @@
                     <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
                   </div>
                   <div class="img-upload__field-wrapper">
-                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..."></textarea>
+                    <textarea class="text__description" maxlength="140" name="description"
+                      placeholder="Ваш комментарий..."></textarea>
                   </div>
                 </fieldset>
 
@@ -166,7 +167,7 @@
           <!-- Комментарии к изображению -->
           <div class="social__comment-count">5 из <span class="comments-count">125</span> комментариев</div>
           <ul class="social__comments">
-            <li class="social__comment">
+            <!-- <li class="social__comment">
               <img class="social__picture" src="img/avatar-4.svg" alt="Аватар комментатора фотографии" width="35"
                 height="35">
               <p class="social__text">Мега фото! Просто обалдеть. Как вам так удалось?</p>
@@ -175,7 +176,7 @@
               <img class="social__picture" src="img/avatar-3.svg" alt="Аватар комментатора фотографии" width="35"
                 height="35">
               <p class="social__text">Да это фоташоп!!!!!!!!</p>
-            </li>
+            </li> -->
           </ul>
 
           <!-- Кнопка для загрузки новой порции комментариев -->
@@ -247,6 +248,7 @@
   <template id="messages">
     <div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
   </template>
+  <script src="pristine/pristine.min.js"></script>
   <script src="js/main.js" type="module"></script>
 </body>
 
