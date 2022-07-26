@@ -5,8 +5,8 @@ export const formValidate = () => {
 
   const pristine = new Pristine(form, {
     classTo: 'img-upload__field-wrapper',
-    errorClass: 'form__item--invalid',
-    successClass: 'form__item--valid',
+    errorClass: 'error',
+    successClass: 'success',
     errorTextParent: 'img-upload__field-wrapper',
     errorTextTag: 'span',
     errorTextClass: 'form__error'
