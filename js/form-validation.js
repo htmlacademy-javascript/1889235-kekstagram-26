@@ -1,3 +1,5 @@
+// import { isEscapeKey } from './popup-image';
+
 export const formValidate = () => {
   const form = document.querySelector('#upload-select-image');
 
@@ -25,3 +27,36 @@ export const formValidate = () => {
 
   form.addEventListener('submit', onSubmit);
 };
+
+// const onPopupEsc = (evt) => {
+//   if (isEscapeKey(evt)) {
+//     evt.preventDefault();
+//     formEditClose();
+//   }
+// };
+// const changeEditContainer = document.querySelector('.img-upload__overlay');
+// const formChangeOpen = document.querySelector('#upload-file');
+// const formChangeClose = changeEditContainer.querySelector('#upload-cancel');
+
+// function formEditOpen() {
+//   changeEditContainer.classList.remove('hidden');
+
+//   document.addEventListener('keydown', onPopupEsc);
+
+//   document.querySelector('body').classList.add('modal-open');
+// }
+
+// function formEditClose() {
+//   changeEditContainer.classList.add('hidden');
+
+//   document.removeEventListener('keydown', onPopupEsc);
+
+//   document.querySelector('body').classList.remove('modal-open');
+// }
+
+
+// formChangeOpen.addEventListener('change ', formEditOpen);
+
+// formChangeClose.addEventListener('click ', formEditClose);
+
+
