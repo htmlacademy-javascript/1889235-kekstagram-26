@@ -18,6 +18,7 @@ export const renderingPhoto = () => {
     pictureElement.querySelector('.picture__comments').textContent = comments;
     fragment.appendChild(pictureElement);
   });
+
   pictureContainer.appendChild(fragment);
 
   popupPhotoOpen.addEventListener('click', popupOpen);
