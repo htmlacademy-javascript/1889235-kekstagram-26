@@ -1,16 +1,17 @@
-import { isEscapeKey } from './popup-image';
+import { isEscapeKey } from './utils.js';
 
 export const formValidate = () => {
   const form = document.querySelector('#upload-select-image');
 
   const pristine = new Pristine(form, {
-    classTo: 'img-upload__field-wrapper',
+    classTo: 'img-upload__form',
     errorClass: 'error',
     successClass: 'success',
-    errorTextParent: 'img-upload__field-wrapper',
+    errorTextParent: 'img-upload__form',
     errorTextTag: 'span',
     errorTextClass: 'form__error'
   }, false);
+
   const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 
   const validateHashtags = (value) => re.test(value);
@@ -55,8 +56,8 @@ function formEditClose() {
 }
 
 
-formChangeOpen.addEventListener('change ', formEditOpen);
+formChangeOpen.addEventListener('change', formEditOpen);
 
-formChangeClose.addEventListener('click ', formEditClose);
+formChangeClose.addEventListener('click', formEditClose);
 
 
