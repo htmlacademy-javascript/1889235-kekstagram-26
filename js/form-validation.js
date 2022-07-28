@@ -4,26 +4,27 @@ export const formValidate = () => {
   const form = document.querySelector('#upload-select-image');
 
   const pristine = new Pristine(form, {
-    classTo: 'img-upload__form',
-    errorClass: 'error',
-    successClass: 'success',
-    errorTextParent: 'img-upload__form',
-    errorTextTag: 'span',
+    classTo: 'img-upload__field-wrapper',
+    errorTextParent: 'img-upload__field-wrapper',
     errorTextClass: 'form__error'
-  }, false);
+  });
 
   const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 
-  const validateHashtags = (value) => re.test(value);
-  const validateComments = (value) => value < 140;
+  const validateHashtags = (value) => {
+    if (value) {
+      return re.test(value);
+    }
+    return true;
+  };
 
   pristine.addValidator(form.querySelector('.text__hashtags'), validateHashtags, 'не правильный хештег');
 
-  pristine.addValidator(form.querySelector('.text__description'), validateComments, 'не больше 140 символов');
-
   const onSubmit = (evt) => {
-    evt.preventDefault();
-    pristine.validate();
+    if (!pristine.validate()) {
+      evt.preventDefault();
+    }
+
   };
 
   form.addEventListener('submit', onSubmit);
