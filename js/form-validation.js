@@ -65,12 +65,12 @@ formChangeOpen.addEventListener('change', formEditOpen);
 formChangeClose.addEventListener('click', formEditClose);
 
 document
-  .querySelectorAll('.required-input')
+  .querySelectorAll('.img-upload__field-wrapper')
   .forEach((input) => {
-    input.addEventListener('focus', () => {
+    input.addEventListener('focusin', () => {
       areInputsFocused = true;
     });
-    input.addEventListener('blur', () => {
+    input.addEventListener('focusout', () => {
       areInputsFocused = false;
     });
   });
