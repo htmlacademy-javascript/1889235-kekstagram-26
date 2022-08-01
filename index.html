@@ -32,7 +32,7 @@
       <section class="img-upload">
         <div class="img-upload__wrapper">
           <h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
-          <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data"
+          <form class="img-upload__form" id="upload-select-image" method="POST" enctype="multipart/form-data"
             autocomplete="off" action="https://26.javascript.pages.academy/kekstagram">
 
             <!-- Изначальное состояние поля для загрузки изображения -->
@@ -130,7 +130,8 @@
                   </div>
                   <div class="img-upload__field-wrapper">
                     <textarea class="text__description" maxlength="140" name="description"
-                      placeholder="Ваш комментарий..."></textarea>
+                      placeholder="Ваш комментарий..."
+                      data-pristine-maxlength-message="Максимальная длина 140 символов"></textarea>
                   </div>
                 </fieldset>
 
@@ -248,6 +249,8 @@
   <template id="messages">
     <div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
   </template>
+
+
   <script src="pristine/pristine.min.js"></script>
   <script src="js/main.js" type="module"></script>
 </body>

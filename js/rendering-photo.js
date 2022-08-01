@@ -1,5 +1,5 @@
 import { SIMILAR_OBJECTS } from './data.js';
-import { popupOpen, popupClose, popupPhoto } from './popup-image.js';
+import { popupOpen, popupClose, popupPhotoContainer } from './popup-image.js';
 
 export const miniatures = SIMILAR_OBJECTS(25);
 
@@ -7,7 +7,7 @@ export const renderingPhoto = () => {
   const pictureContainer = document.querySelector('.pictures');
   const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
   const popupPhotoOpen = document.querySelector('.pictures');
-  const popupPhotoClose = popupPhoto.querySelector('#picture-cancel');
+  const popupPhotoClose = popupPhotoContainer.querySelector('#picture-cancel');
 
   const fragment = document.createDocumentFragment();
 
@@ -18,6 +18,7 @@ export const renderingPhoto = () => {
     pictureElement.querySelector('.picture__comments').textContent = comments;
     fragment.appendChild(pictureElement);
   });
+
   pictureContainer.appendChild(fragment);
 
   popupPhotoOpen.addEventListener('click', popupOpen);
