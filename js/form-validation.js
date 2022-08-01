@@ -12,7 +12,14 @@ export const formValidate = () => {
 
   const validateHashtags = (value) => {
     if (value) {
-      return re.test(value);
+      const hashtags = value.split(' ');
+      const similarHashtags = [];
+      for (let i = 0; i <= hashtags.length - 1; i++) {
+        if (!re.test(hashtags[i]) || hashtags.length > 5 || similarHashtags.includes(hashtags[i])) {
+          return false;
+        }
+        similarHashtags.push(hashtags[i]);
+      }
     }
     return true;
   };
@@ -36,6 +43,7 @@ const onPopupEsc = (evt) => {
     formEditClose();
   }
 };
+
 const changeEditContainer = document.querySelector('.img-upload__overlay');
 const formChangeOpen = document.querySelector('#upload-file');
 const formChangeClose = changeEditContainer.querySelector('#upload-cancel');
@@ -55,6 +63,8 @@ function formEditClose() {
   if (areInputsFocused === true) {
     return;
   }
+
+  document.querySelector('.img-upload__form').reset();
   changeEditContainer.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEsc);
   document.querySelector('body').classList.remove('modal-open');
